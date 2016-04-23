@@ -21,7 +21,6 @@
 typedef unsigned long time_t;
 #endif
 
-#define MIN_SECS_SINCE_EPOCH 1447000000ul
 
 // This ugly hack allows us to define C++ overloaded functions, when included
 // from within an extern "C", as newlib's sys/stat.h does.  Actually it is
@@ -118,9 +117,7 @@ int     month(time_t t);   // the month for the given time
 int     year();            // the full four digit year: (2009, 2010 etc) 
 int     year(time_t t);    // the year for the given time
 
-time_t  now();              // return the current time as seconds since Jan 1 1970 
-void    syncTime();
-void    syncTime(getExternalTime getTime);
+time_t now();              // return the current time as seconds since Jan 1 1970 
 void    setTime(time_t t);
 void    setTime(int hr,int min,int sec,int day, int month, int yr);
 void    adjustTime(long adjustment);
